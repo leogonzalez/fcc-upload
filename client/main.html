@@ -1,0 +1,22 @@
+<head>
+  <title>fcc-timestamp</title>
+</head>
+
+<body>
+<h3>Upload a file to view it's size</h3>
+<form method="post">
+  <input type="file" id="input" onchange="handleSubmit(this.files[0].size);">
+  <!-- <button type="submit" name="button" on>Send</button>   -->
+</form>
+<p id="size"></p>
+
+<script type="text/javascript">
+function handleSubmit(str) {
+
+  var t = document.getElementById('size');
+  t.innerHTML = JSON.stringify({
+    'size': str
+  });
+};
+</script>
+</body>
